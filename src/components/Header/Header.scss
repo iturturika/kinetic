@@ -1,0 +1,28 @@
+.header{
+    width: 100%;
+    //shadow
+    background: rgba(255, 255, 255, 0.70);
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.02);
+    backdrop-filter: blur(2.5px);
+}
+
+.header-wrap{
+    max-width: 1200px;
+    display: flex;
+    height: 70px;
+
+    justify-content: space-between;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.logo{
+    width: 60px;
+    cursor: pointer;
+}
+
+.cart {
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}

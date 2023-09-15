@@ -5,6 +5,31 @@
     max-width: 1200px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     column-gap: 50px;
     row-gap: 100px;
+}
+
+@media screen and (max-width: 1199px) {
+    .main-wrap {
+        max-width: 992px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .main-wrap  {
+        max-width: 767px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .main-wrap  {
+        max-width: 576px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .main-wrap  {
+        max-width: 350px;
+    }
 }

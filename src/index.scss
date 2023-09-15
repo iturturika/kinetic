@@ -59,4 +59,39 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+label {
+  font-weight: 700;
+}
+/* Стилизация select */
+select {
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 200px;
+}
+
+option {
+  font-size: 16px;
+  padding: 5px;
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+/* Стилизация при наведении на option */
+option:hover {
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+/* Скрытие стандартной стрелки выбора в Firefox */
+select::-moz-focus-inner {
+  border: 0;
+}
+
+/* Изменение стиля при фокусе на select */
+select:focus {
+  outline: none;
+  border: 2px solid #b1b1b1; /* Измените цвет на свой вкус */
+}
 

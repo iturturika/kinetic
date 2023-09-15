@@ -2,20 +2,17 @@ import React from 'react'
 import './Main.scss';
 import Item from '../../components/Item/Item';
 
-const Main = () => {
+const Main = ({setOnClickItem}) => {
   return (
     <aside className='main-wrap'>
-      <Item />
-      <Item />
-      <Item />
-      <Item />
-      <Item />
-      <Item />
-      <Item />
-      <Item />
-      <Item />
-      <Item />
-      <Item />
+      <Item setOnClickItem={setOnClickItem}/>
+      <Item setOnClickItem={setOnClickItem}/>
+      <Item setOnClickItem={setOnClickItem}/>
+      <Item setOnClickItem={setOnClickItem}/>
+      <Item setOnClickItem={setOnClickItem}/>
+      <Item setOnClickItem={setOnClickItem}/>
+      <Item setOnClickItem={setOnClickItem}/>
+   
     </aside>
   )
 }

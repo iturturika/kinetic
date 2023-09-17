@@ -9,14 +9,17 @@ import DetailedItem from './components/DetailedItem/DetailedItem';
 function App() {
   const [onClickItem, setOnClickItem] = React.useState(false)
   return (
-    <div className="App">
-      <Header />
-      {onClickItem ? <DetailedItem setOnClickItem={setOnClickItem}/> : <></>}
-      <Routes>
-        <Route path="/" element={<Main setOnClickItem={setOnClickItem}/>}/>
-      </Routes>
-      <Footer />
-    </div>
+    <>
+      {onClickItem ? <DetailedItem setOnClickItem={setOnClickItem}/> : 
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Main setOnClickItem={setOnClickItem}/>}/>
+        </Routes>
+        <Footer />
+      </div>
+      }
+    </>
   );
 }
 

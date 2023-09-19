@@ -21,7 +21,6 @@ time, mark, audio, video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: inherit;
   vertical-align: baseline;
   font-family: 'Roboto', sans-serif;
 }
@@ -90,6 +89,6 @@ select::-moz-focus-inner {
 /* Изменение стиля при фокусе на select */
 select:focus {
   outline: none;
-  border: 2px solid #b1b1b1; /* Измените цвет на свой вкус */
+  border: 1px solid #b1b1b1; /* Измените цвет на свой вкус */
 }
 

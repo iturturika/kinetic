@@ -8,6 +8,7 @@ const Item = ({setOnClickItem}) => {
       <img src={itemImg1} alt='itemImg' className='item-image' draggable="false"></img>
       <h3 className='item-title'>Cavempt hoodie</h3>
       <p className='item-price'>12000MDL</p>
+      <p style={{fontSize: 16, color: "#F95D51", marginTop: 5}}>out of stock</p>
     </div>
   )
 }

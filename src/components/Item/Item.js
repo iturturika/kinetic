@@ -3,8 +3,10 @@ import './Item.scss';
 import itemImg1 from '../../assets/img/itemImg1.jpg';
 
 const Item = ({setOnClickItem}) => {
+  const bodyElement = document.body;
+
   return (
-    <div className='item' onClick={() => {setOnClickItem(true)}}>
+    <div className='item' onClick={() => {setOnClickItem(true); bodyElement.style.overflowY = 'hidden';}}>
       <img src={itemImg1} alt='itemImg' className='item-image' draggable="false"></img>
       <h3 className='item-title'>Cavempt hoodie</h3>
       <p className='item-price'>12000MDL</p>

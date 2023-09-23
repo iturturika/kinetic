@@ -12,6 +12,10 @@ const Main = ({setOnClickItem}) => {
       <Item setOnClickItem={setOnClickItem}/>
       <Item setOnClickItem={setOnClickItem}/>
       <Item setOnClickItem={setOnClickItem}/>
+      <Item setOnClickItem={setOnClickItem}/>
+      <Item setOnClickItem={setOnClickItem}/>
+      <Item setOnClickItem={setOnClickItem}/>
+      <Item setOnClickItem={setOnClickItem}/>
    
     </aside>
   )

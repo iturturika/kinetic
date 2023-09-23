@@ -4,9 +4,11 @@ import closeIcon from '../../assets/img/closeIcon.svg'
 import itemImg1 from '../../assets/img/itemImg1.jpg'
 
 const DetailedItem = ({setOnClickItem}) => {
+  const bodyElement = document.body;
+  
   return (
     <div className='overlay'>
-      <img src={closeIcon} alt="X" className='close-icon' onClick={() => {setOnClickItem(false)}}></img>
+      <img src={closeIcon} alt="X" className='close-icon' onClick={() => {setOnClickItem(false); bodyElement.style.overflowY = 'auto';}}></img>
       <div className='detailed-item-block'>
         <div className='detailed-item-galery'>
           <img src={itemImg1} alt='item' className='detailed-image' draggable="false"></img>

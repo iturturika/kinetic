@@ -10,19 +10,17 @@ import Cart from './components/Cart/Cart';
 function App() {
   const [onClickItem, setOnClickItem] = React.useState(false);
   const [onClickCart, setOnClickCart] = React.useState(false);
-
+  
   return (
-    <>
-      {onClickCart ? <Cart setOnClickCart={setOnClickCart}/> : <></>}
-      {onClickItem ? <DetailedItem setOnClickItem={setOnClickItem}/> : <></>}
-      <div className="App">
+    <div className="App" >
+      {onClickCart ? <Cart setOnClickCart={setOnClickCart}/> : null}
+      {onClickItem ? <DetailedItem setOnClickItem={setOnClickItem}/> : null}
       <Header setOnClickCart={setOnClickCart}/>
-        <Routes>
-          <Route path="/" element={<Main setOnClickItem={setOnClickItem}/>}/>
-        </Routes>
-        <Footer />
-      </div>
-    </>
+      <Routes>
+        <Route path="/" element={<Main setOnClickItem={setOnClickItem} />}/>
+      </Routes>
+      <Footer />
+    </div>
   );
 }
 

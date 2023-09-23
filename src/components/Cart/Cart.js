@@ -4,8 +4,10 @@ import CartItem from '../CartItem/CartItem'
 
 
 const Cart = ({setOnClickCart}) => {
+  const bodyElement = document.body;
+
   return (
-    <div className='cart-overlay' onClick={() => {setOnClickCart(false)}}>
+    <div className='cart-overlay' onClick={() => {setOnClickCart(false); bodyElement.style.overflowY = 'auto';}}>
       <div className='cart-block' onClick={(event) => {event.stopPropagation()}}>
         <h3 className='cart-heading'>Placing an order</h3>
         <CartItem />

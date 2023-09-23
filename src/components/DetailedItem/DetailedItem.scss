@@ -1,5 +1,7 @@
 .overlay{
     position: fixed;
+    display: block;
+    overflow-y: auto;
     transition: 0.3s ease-in-out;
     top: 0;
     left: 0;

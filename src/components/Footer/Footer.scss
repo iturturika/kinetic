@@ -12,8 +12,8 @@
     height: 80px;
     justify-content: space-between;
     align-items: center;
-    margin: 0 auto;
-    margin-top: 5px;
+    margin: 0 auto !important;
+    padding-top: 5px !important;
     li{
         font-size: 14px;
         font-weight: 700;

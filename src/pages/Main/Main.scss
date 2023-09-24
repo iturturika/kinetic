@@ -5,26 +5,28 @@
     max-width: 1200px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    column-gap: 50px;
+    column-gap: 52px;
     row-gap: 100px;
 }
 
 @media screen and (max-width: 1199px) {
     .main-wrap {
         max-width: 992px;
+        column-gap: 105px;
     }
 }
 
 @media screen and (max-width: 992px) {
     .main-wrap  {
         max-width: 767px;
+        justify-content: space-between;
     }
 }
 
 @media screen and (max-width: 767px) {
     .main-wrap  {
         max-width: 576px;
+        justify-content: center;
     }
 }
 

@@ -1,0 +1,35 @@
+.offer-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 80px;
+    margin-bottom: 80px;
+    h2{
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+}
+
+
+@media screen and (max-width: 1199px) {
+    .offer-page {
+        max-width: 992px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .offer-page  {
+        max-width: 767px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .offer-page  {
+        max-width: 576px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .offer-page  {
+        max-width: 300px;
+    }
+}

@@ -1,7 +1,7 @@
 import React from 'react'
 import './Cart.scss'
 import CartItem from '../CartItem/CartItem'
-
+import closeIcon from '../../assets/img/closeIcon.svg';
 
 const Cart = ({setOnClickCart}) => {
   const bodyElement = document.body;
@@ -9,8 +9,10 @@ const Cart = ({setOnClickCart}) => {
   return (
     <div className='cart-overlay' onClick={() => {setOnClickCart(false); bodyElement.style.overflowY = 'auto';}}>
       <div className='cart-block' onClick={(event) => {event.stopPropagation()}}>
-        <h3 className='cart-heading'>Placing an order</h3>
-        <CartItem />
+        <div className='cart-heading'><h3 >Placing an order</h3><img src={closeIcon} alt='crest' onClick={() => {setOnClickCart(false); bodyElement.style.overflowY = 'auto';}}></img></div>
+          <CartItem />
+          <CartItem />
+          <CartItem />
         <p className='subtotal-cart'>Subtotal: 1 200 mdl</p>
         <h3 style={{fontSize: 24}}>Delivery</h3>
         <input className='cart-input' placeholder='Name'></input>

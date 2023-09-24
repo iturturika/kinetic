@@ -1,15 +1,17 @@
+
 .cart-item-img{
-    width: 15%;
+    width: 70px;
 }
 
 .cart-item-info {
-    width: 35%;
+    width: 70%;
     padding: 10px;
 }
 
 .cart-item-controls{
     display: flex;
-    width: 55%;
+
+    width: 100%;
     align-items: center;
     justify-content: space-between;
     img{
@@ -23,4 +25,15 @@
     margin-top: 10px;
     margin-bottom: 10px;
     display: flex;
+}
+
+
+@media screen and (max-width: 576px) {
+    .cart-item{
+        flex-direction: column;
+    }
+    .cart-item-info{
+        width: 100%;
+        padding: 0;
+    }
 }

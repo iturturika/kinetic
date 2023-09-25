@@ -4,7 +4,7 @@ import Item from '../../components/Item/Item';
 
 const Main = ({setOnClickItem}) => {
   return (
-    <aside className='main-wrap'>
+    <div className='main-wrap'>
       <Item setOnClickItem={setOnClickItem}/>
       <Item setOnClickItem={setOnClickItem}/>
       <Item setOnClickItem={setOnClickItem}/>
@@ -17,7 +17,7 @@ const Main = ({setOnClickItem}) => {
       <Item setOnClickItem={setOnClickItem}/>
       <Item setOnClickItem={setOnClickItem}/>
    
-    </aside>
+    </div>
   )
 }
 

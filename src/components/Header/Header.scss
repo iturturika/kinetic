@@ -19,12 +19,14 @@
 .logo{
     width: 50px;
     cursor: pointer;
+    -webkit-user-drag: none;
 }
 
 .cart {
     width: 35px;
     height: 35px;
     cursor: pointer;
+    -webkit-user-drag: none;
 }
 
 @media screen and (max-width: 1199px) {

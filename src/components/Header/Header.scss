@@ -29,6 +29,16 @@
     -webkit-user-drag: none;
 }
 
+.header-socials{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 40px;
+    img{
+        width: 30px;
+    }
+}
+
 @media screen and (max-width: 1199px) {
     .header-wrap {
         max-width: 992px;

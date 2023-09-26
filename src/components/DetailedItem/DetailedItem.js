@@ -29,7 +29,7 @@ const DetailedItem = ({setOnClickItem}) => {
                 <option value="cherry">L</option>
                 <option value="grape">XL</option>
             </select>
-            <button className='buy-button'>BUY</button>
+            <button className='buy-button'>Связаться с продавцом</button>
             <h4 style={{fontWeight: 700}}>Description:</h4>
             <p className='detailed-item-description'>
                 Крой: оверсайз<br/>

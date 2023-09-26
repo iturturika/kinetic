@@ -69,7 +69,7 @@
 .buy-button{
     margin-top: 20px;
     margin-bottom: 20px;
-    width: 150px;
+    width: 250px;
     height: 40px;
     border: none;
     border-radius: 10px;
@@ -77,8 +77,14 @@
     color: #fff;
     cursor: pointer;
     font-weight: 700;
-    background-color: #5fd085;
+    background: linear-gradient(to right, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D, #F56040, #F77737, #FCAF45, #FFDC80);
 }
+
+.buy-button:active {
+    transform: scale(0.95);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
 
 @media screen and (max-width: 1250px) {
     .detailed-item-block{

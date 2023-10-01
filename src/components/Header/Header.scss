@@ -39,6 +39,24 @@
     }
 }
 
+.create-item-button{
+    width: 160px;
+    height: 40px;
+    font-weight: 700;
+    font-size: 20px;
+    color: #000;
+    background: rgba(255, 255, 255, 0.70);
+    border: 2px solid #000;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.create-item-button:hover{
+    background-color: #000;
+    color: #fff;
+    transition: 0.3s ease-in-out;
+}
+
 @media screen and (max-width: 1199px) {
     .header-wrap {
         max-width: 992px;
@@ -60,5 +78,11 @@
 @media screen and (max-width: 576px) {
     .header-wrap  {
         max-width: 300px;
+    }
+    .create-item-button{
+        width: 100px;
+        height: 30px;
+        font-weight: 700;
+        font-size: 16px;
     }
 }

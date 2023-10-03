@@ -91,7 +91,7 @@
 }
 
 .add-item-controls-save-button{
-    width: 150px;
+    width: 200px;
     height: 40px;
     border: none;
     background-color: #51ff51;
@@ -104,6 +104,20 @@
 
 .add-item-controls-save-button:hover{
     background-color: #51ff51be;
+}
+
+.add-item-page-back-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 160px;
+    height: 40px;
+    font-size: 18px;
+    color: #000;
+    background: rgba(255, 255, 255, 0.70);
+    border: 1px solid #000;
+    border-radius: 10px;
+    cursor: pointer;
 }
 
 

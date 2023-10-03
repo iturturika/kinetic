@@ -17,7 +17,7 @@ function App() {
   return (
     <div className="App" >
       {onClickCart ? <Cart setOnClickCart={setOnClickCart}/> : null}
-      {onClickItem ? <DetailedItem setOnClickItem={setOnClickItem}/> : null}
+      {onClickItem ? <DetailedItem onClickItem={onClickItem} setOnClickItem={setOnClickItem}/> : null}
       <Header setOnClickCart={setOnClickCart}/>
       <Routes>
         <Route path="/" element={<Main setOnClickItem={setOnClickItem} />}/>

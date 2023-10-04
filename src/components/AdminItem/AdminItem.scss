@@ -8,7 +8,8 @@
 
 .admin-item-galery{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
+    column-gap: 50px;
 }
 
 .admin-item-image{

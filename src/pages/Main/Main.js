@@ -9,7 +9,7 @@ const Main = ({setOnClickItem}) => {
   React.useEffect(() => {
     const getItems = async () => {
       try {
-        const res = await axios.get(process.env.REACT_APP_BE_URL + `/items?status=APROVED&title=&categories=&label=`);
+        const res = await axios.get(process.env.REACT_APP_BE_URL + `/items?title=&categories=&label=&status=APROVED`);
         setItems(res.data);
       } catch (err) {
         return err;
@@ -23,7 +23,7 @@ const Main = ({setOnClickItem}) => {
       {
         items ? 
         items.map((item) => {
-          return <Item key={item._id} id={item._id} setOnClickItem={setOnClickItem} title={item.title} price={item.price} image={process.env.REACT_APP_BE_URL + '/' + item.imagePaths[0]}/>
+          return <Item key={item._id} id={item._id} setOnClickItem={setOnClickItem} title={item.title} price={item.price} label={item.label} image={process.env.REACT_APP_BE_URL + '/' + item.imagePaths[0]}/>
         }) : null
       }
     </div>

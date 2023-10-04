@@ -38,6 +38,9 @@ const DetailedItem = ({setOnClickItem, onClickItem}) => {
       <div className='detailed-info-block'>
           <h3 className='detailed-item-header'>{item.title}</h3>
           <p className='detailed-item-price'>{item.price}mdl</p>
+          {
+            item.label === 'LEGIT' ? <p style={{fontSize: 16, color: "#3ee63e", marginTop: 5, borderRadius: 15, border: '2px solid #3ee63e', width: 80, textAlign: 'center'}}>Legit</p> : null
+          }
           <label style={{marginTop: "20px", marginBottom: "10px"}}>Size</label>
           <select id="size" name="size">
               <option value="Size">{item.size}</option>

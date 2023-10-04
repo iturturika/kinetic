@@ -9,6 +9,14 @@
     row-gap: 100px;
 }
 
+.category-wrap{
+    display: flex;
+    column-gap: 30px;
+    flex-wrap: wrap;
+    row-gap: 20px;
+
+}
+
 @media screen and (max-width: 1199px) {
     .main-wrap {
         max-width: 992px;
@@ -31,7 +39,12 @@
 }
 
 @media screen and (max-width: 576px) {
+    
     .main-wrap  {
         max-width: 350px;
+    }
+    .category-wrap{
+        padding-left: 10px;
+        padding-right: 10px;
     }
 }

@@ -137,6 +137,10 @@
     .add-item-page-wrap  {
         max-width: 576px;
     }
+    
+    .add-item-galery{
+        flex-wrap: wrap;
+    }
 }
 
 @media screen and (max-width: 576px) {

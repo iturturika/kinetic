@@ -1,0 +1,22 @@
+.category-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    border-radius: 30px;
+    background: #FBFBFB;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+    padding: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    cursor: pointer;
+    p{
+        font-size: 16px;
+        font-weight: 700;
+        color: #000;
+    } 
+}
+
+.category-button:active{
+    transform: scale(0.99);
+}

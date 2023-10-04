@@ -33,3 +33,18 @@
     display: inline-block;
   }
   
+  @media screen and (max-width: 767px) {
+    .custom-file-upload {
+      width: 260px;
+      height: 260px;
+      img{
+          -webkit-user-drag: none;
+      }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .add-item-page-wrap  {
+        max-width: 300px;
+    }
+}

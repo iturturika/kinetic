@@ -9,6 +9,7 @@ import Cart from './components/Cart/Cart';
 import OfferPage from './pages/OfferPage/OfferPage';
 import AdminMainPage from './pages/AdminMainPage/AdminMainPage';
 import AddItemPage from './pages/AddItemPage/AddItemPage';
+import LoginPage from './pages/LoginPage/LoginPage';
 
 function App() {
   const [onClickItem, setOnClickItem] = React.useState(false);
@@ -24,6 +25,7 @@ function App() {
         <Route path="/info" element={<OfferPage />}/>
         <Route path='/admin' element={<AdminMainPage />}/>
         <Route path='/add-item' element={<AddItemPage />}/>
+        <Route path='/login' element={<LoginPage />}/>
       </Routes>
       <Footer />
     </div>

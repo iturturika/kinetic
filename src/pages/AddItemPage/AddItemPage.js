@@ -2,7 +2,7 @@ import React from 'react'
 import './AddItemPage.scss'
 import axios from 'axios'
 import ImageUpload from '../../components/ImageUpload/ImageUpload'
-import checkmarkImage from '../../assets/img/Checkmark.png'
+import checkmarkImage from '../../assets/img/Checkmark.svg'
 import { Link } from 'react-router-dom'
 
 const AddItemPage = () => {
@@ -83,6 +83,7 @@ return (
                 <div className='add-item-input'>
                     <label>Размер:</label>
                     <select onChange={(event) => {setSize(event.target.value)}} defaultValue={'XS'}>
+                        <option value="OS" >OS</option>
                         <option value="XS" >XS</option>
                         <option value="S">S</option>
                         <option value="M">M</option>
@@ -124,9 +125,21 @@ return (
                 <div className='add-item-input'>
                     <label>Категория:</label>
                     <select onChange={(event) => {setCategories(event.target.value)}} defaultValue={'HOODIE'}>
+                        <option value="HOODIE">Батник</option>
                         <option value="SWEATER">Свитер</option>
-                        <option value="HOODIE">Худи</option>
+                        <option value="ZIPUP">Зипка</option>
                         <option value="PANTS">Штаны</option>
+                        <option value="JEANS">Джинсы</option>
+                        <option value="LONGSLIVE">Лонгслив</option>
+                        <option value="TSHIRT">Футболка</option>
+                        <option value="SHORTS">Шорты</option>
+                        <option value="SNEAKERS">Кроссовки</option>
+                        <option value="JACKET">Куртка</option>
+                        <option value="WINDBREAKER">Ветровка</option>
+                        <option value="ACCESSORIES">Аксессуары</option>
+                        <option value="BOOTS">Ботинки</option>
+                        <option value="BAG">Рюкзак</option>
+                        <option value="MESSENGERS">Мессенджер</option>
                     </select>
                 </div>
                 <div className='add-item-controls'>

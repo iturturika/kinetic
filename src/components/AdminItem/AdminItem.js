@@ -16,7 +16,11 @@ const AdminItem = ({title, id, description, price, imagePaths, label, categories
 
   const deleteItem = async (id) => {
     try {
-      const res = await axios.delete(process.env.REACT_APP_BE_URL + '/items/' + id);
+      const res = await axios.delete(process.env.REACT_APP_BE_URL + '/items/' + id, {
+        headers: {
+          "authorization": 'Bearer ' + sessionStorage.getItem('accessToken')
+        }
+      });
       if(res.status === 200) {
         alert('Успешно удаленно');
       }
@@ -36,7 +40,11 @@ const AdminItem = ({title, id, description, price, imagePaths, label, categories
       formData.append('categories', categoriesInput);
       formData.append("instagramUrl", instagramUrlInput);
       formData.append("status", statusInput);
-      const res = await axios.patch(process.env.REACT_APP_BE_URL + '/items/' + id, formData);
+      const res = await axios.patch(process.env.REACT_APP_BE_URL + '/items/' + id, formData, {
+        headers: {
+          "authorization": 'Bearer ' + sessionStorage.getItem('accessToken')
+        }
+      });
       if(res.status === 200) {
         alert('Успешно изминенно');
         formData.delete('title');
@@ -87,12 +95,29 @@ const AdminItem = ({title, id, description, price, imagePaths, label, categories
             <label>Categories:</label>
             <select onChange={(event) => {setCategoriesInput(event.target.value)}}>
                 <option value={categoriesInput}>{categoriesInput}</option>
+                <option value="HOODIE">Батник</option>
+                <option value="SWEATER">Свитер</option>
+                <option value="ZIPUP">Зипка</option>
+                <option value="PANTS">Штаны</option>
+                <option value="JEANS">Джинсы</option>
+                <option value="LONGSLIVE">Лонгслив</option>
+                <option value="TSHIRT">Футболка</option>
+                <option value="SHORTS">Шорты</option>
+                <option value="SNEAKERS">Кроссовки</option>
+                <option value="JACKET">Куртка</option>
+                <option value="WINDBREAKER">Ветровка</option>
+                <option value="ACCESSORIES">Аксессуары</option>
+                <option value="BOOTS">Ботинки</option>
+                <option value="BAG">Рюкзак</option>
+                <option value="MESSENGERS">Мессенджер</option>
             </select>
         </div>
         <div className='admin-item-input'>
             <label>Label:</label>
             <select onChange={(event) => {setLabelInput(event.target.value)}}>
                 <option value={labelInput}>{labelInput}</option>
+                <option value="LEGIT" >Оригинал</option>
+                <option value="NONE" >без метки</option>
             </select>
         </div>
         <div className='admin-item-input'>

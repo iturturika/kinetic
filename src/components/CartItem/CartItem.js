@@ -1,6 +1,5 @@
 import React from 'react'
 import './CartItem.scss'
-import cartItemImg from '../../assets/img/itemImg1.jpg';
 import crestImg from '../../assets/img/crestImg.svg';
 import plusImg from '../../assets/img/plusImg.svg';
 import minusImg from '../../assets/img/minusImg.svg';
@@ -8,7 +7,7 @@ import minusImg from '../../assets/img/minusImg.svg';
 const CartItem = () => {
   return (
     <div className='cart-item'>
-        <img src={cartItemImg} alt='cart-item' className='cart-item-img'></img>
+        <img src={''} alt='cart-item' className='cart-item-img'></img>
         <div className='cart-item-info'>
           <p style={{fontSize: 16, fontWeight: 700}}>LABEL FOR THIS ZIP HOODIE</p>
           <p style={{fontSize: 12}}>size: M</p>

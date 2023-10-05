@@ -1,0 +1,19 @@
+.login-page-form {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 20px;
+    width: 400px;
+    height: 750px;
+    input{
+        outline: none;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .login-page-form {
+        width: 300px;
+        height: 700px;
+    }
+}

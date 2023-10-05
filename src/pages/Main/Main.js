@@ -8,19 +8,20 @@ import Search from '../../components/Search/Search';
 const Main = ({setOnClickItem}) => {
   const [items, setItems] = React.useState(false);
   const [categories, setCategories] = React.useState('');
+  const [label, setLabel] = React.useState('');
   const [title, setTitle] = React.useState('');
   const [titleInput, setTitleInput] = React.useState('');
   React.useEffect(() => {
     const getItems = async () => {
       try {
-        const res = await axios.get(process.env.REACT_APP_BE_URL + `/items?title=${title}&categories=${categories}&label=&status=APROVED`);
+        const res = await axios.get(process.env.REACT_APP_BE_URL + `/items?title=${title}&categories=${categories}&label=${label}&status=APROVED`);
         setItems(res.data);
       } catch (err) {
         return err;
       }
     };
     getItems();
-  }, [title, categories]);
+  }, [title, categories, label]);
 
   return (
     <div className='main-wrap' style={items.length === 0 ? {justifyContent: 'center', alignItems: 'center'} : null}>
@@ -41,16 +42,16 @@ const Main = ({setOnClickItem}) => {
         <CategoryButton nameCategory={'Ботинки'} value={'BOOTS'} setCategories={setCategories} style={categories === 'BOOTS' ? {boxShadow: '0px 2px 2px 0px rgba(0, 0, 0, 0.15) inset'} : null}/>
         <CategoryButton nameCategory={'Рюкзаки'} value={'BAG'} setCategories={setCategories} style={categories === 'BAG' ? {boxShadow: '0px 2px 2px 0px rgba(0, 0, 0, 0.15) inset'} : null}/>
         <CategoryButton nameCategory={'Мессенджеры'} value={'MESSENGERS'} setCategories={setCategories} style={categories === 'MESSENGERS' ? {boxShadow: '0px 2px 2px 0px rgba(0, 0, 0, 0.15) inset'} : null}/>
-        <div className='category-button' onClick={() => {setCategories(''); setTitle(''); setTitleInput('')}}>
+        {/* <CategoryButton nameCategory={'Оригинал'} value={'LEGIT'} setCategories={setLabel} style={label === 'LEGIT' ? {boxShadow: '0px 2px 2px 0px rgba(0, 0, 0, 0.15) inset'} : null}/> */}
+        <div className='category-button' onClick={() => {setCategories(''); setTitle(''); setTitleInput(''); setLabel('')}}>
           <p>Сбросить</p>
         </div>
-        {/* <CategoryButton nameCategory={'Оригинал'} value={'LEGIT'} setLabel={setLabel}/> */}
       </div>
       {
         items.length > 0 ? 
         items.map((item) => {
           return <Item key={item._id} id={item._id} setOnClickItem={setOnClickItem} title={item.title} price={item.price} label={item.label} image={process.env.REACT_APP_BE_URL + '/' + item.imagePaths[0]}/>
-        }) : <div style={{fontSize: 16, textAlign: 'center', height: 400, display: 'flex', alignItems: 'center'}}><p>Ничего не найденно</p></div>
+        }) : <div style={{fontSize: 16, textAlign: 'center', height: 400, display: 'flex', alignItems: 'center', margin: '0 auto'}}><p>Ничего не найденно</p></div>
       }
     </div>
   )

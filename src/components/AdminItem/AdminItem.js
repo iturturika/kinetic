@@ -2,7 +2,7 @@ import React from 'react'
 import './AdminItem.scss'
 import axios from 'axios'
 
-const AdminItem = ({title, id, description, price, imagePaths, label, categories, instagramUrl, size, status}) => {
+const AdminItem = ({title, id, description, price, imagePaths, label, categories, instagramUrl, size, status, priority}) => {
 
   const [titleInput, setTitleInput] = React.useState(title);
   const [descriptionInput, setDescriptionInput] = React.useState(description);
@@ -12,6 +12,7 @@ const AdminItem = ({title, id, description, price, imagePaths, label, categories
   const [instagramUrlInput, setInstagramUrlInput] = React.useState(instagramUrl);
   const [sizeInput, setSizeInput] = React.useState(size);
   const [statusInput, setStatusInput] = React.useState(status);
+  const [priorityInput, setPriorityInput] = React.useState(priority);
   const formData = new FormData();
 
   const deleteItem = async (id) => {
@@ -40,6 +41,7 @@ const AdminItem = ({title, id, description, price, imagePaths, label, categories
       formData.append('categories', categoriesInput);
       formData.append("instagramUrl", instagramUrlInput);
       formData.append("status", statusInput);
+      formData.append("priority", priorityInput);
       const res = await axios.patch(process.env.REACT_APP_BE_URL + '/items/' + id, formData, {
         headers: {
           "authorization": 'Bearer ' + sessionStorage.getItem('accessToken')
@@ -55,6 +57,7 @@ const AdminItem = ({title, id, description, price, imagePaths, label, categories
         formData.delete('categories');
         formData.delete("instagramUrl");
         formData.delete("status");
+        formData.delete("priority");
       }
     } catch (err) {
       return err;
@@ -133,6 +136,23 @@ const AdminItem = ({title, id, description, price, imagePaths, label, categories
                     <>
                       <option value={statusInput}>{statusInput}</option>
                       <option value={"WAITING"}>WAITING</option>
+                    </>
+                }
+            </select>
+        </div>
+        <div className='admin-item-input'>
+            <label>Priority:</label>
+            <select onChange={(event) => {setPriorityInput(event.target.value)}}>
+                {
+                  priority === 100 ?
+                    <>
+                      <option value={priorityInput}>NORMAL</option>
+                      <option value={1}>HIGH</option>
+                    </>
+                  :
+                    <>
+                      <option value={priorityInput}>HIGH</option>
+                      <option value={100}>NORMAL</option>
                     </>
                 }
             </select>

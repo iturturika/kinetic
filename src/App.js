@@ -22,10 +22,10 @@ function App() {
       <Header setOnClickCart={setOnClickCart}/>
       <Routes>
         <Route path="/" element={<Main setOnClickItem={setOnClickItem} />}/>
-        <Route path="/info" element={<OfferPage />}/>
-        <Route path='/admin' element={<AdminMainPage />}/>
-        <Route path='/add-item' element={<AddItemPage />}/>
-        <Route path='/login' element={<LoginPage />}/>
+        <Route exact path="/info" element={<OfferPage />}/>
+        <Route exact path='/admin' element={<AdminMainPage />}/>
+        <Route exact path='/add-item' element={<AddItemPage />}/>
+        <Route exact path='/login' element={<LoginPage />}/>
       </Routes>
       <Footer />
     </div>

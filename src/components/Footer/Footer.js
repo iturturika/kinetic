@@ -10,8 +10,8 @@ const Footer = () => {
             {/* <li><Link to={"/info#delivery"}>ДОСТАВКА</Link></li>
             <li><Link to={"/info#payment"}>ОПЛАТА</Link></li>
             <li><Link to={"/info#contacts"}>КОНТАКТЫ</Link></li> */}
-            <li><Link to={"#"}>INSTAGRAM</Link></li>
-            <li><Link to={"#"}>TikTok</Link></li>
+            <li><Link to={"https://instagram.com/kinetic.store.md?igshid=OGQ5ZDc2ODk2ZA=="}>INSTAGRAM</Link></li>
+            <li><Link to={"https://www.tiktok.com/@kinetic.store?_t=8gJHGRVGAsw&_r=1"}>TikTok</Link></li>
             <li>KINETIC | All rights reserved ©</li>
         </ul>
     </footer>

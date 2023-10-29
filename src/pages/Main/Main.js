@@ -4,6 +4,7 @@ import Item from '../../components/Item/Item';
 import axios from 'axios';
 import CategoryButton from '../../components/CategoryButton/CategoryButton';
 import Search from '../../components/Search/Search';
+import Loader from '../../components/Loader/Loader';
 
 const Main = ({setOnClickItem}) => {
   const [items, setItems] = React.useState(false);
@@ -11,11 +12,14 @@ const Main = ({setOnClickItem}) => {
   const [label, setLabel] = React.useState('');
   const [title, setTitle] = React.useState('');
   const [titleInput, setTitleInput] = React.useState('');
+  const [loading, setLoading] = React.useState(true);
+
   React.useEffect(() => {
     const getItems = async () => {
       try {
         const res = await axios.get(process.env.REACT_APP_BE_URL + `/items?title=${title}&categories=${categories}&label=${label}&status=APROVED`);
         setItems(res.data);
+        setLoading(false);
       } catch (err) {
         return err;
       }
@@ -51,7 +55,7 @@ const Main = ({setOnClickItem}) => {
         items.length > 0 ? 
         items.map((item) => {
           return <Item key={item._id} id={item._id} setOnClickItem={setOnClickItem} title={item.title} price={item.price} label={item.label} image={process.env.REACT_APP_BE_URL + '/' + item.imagePaths[0]}/>
-        }) : <div style={{fontSize: 16, textAlign: 'center', height: 400, display: 'flex', alignItems: 'center', margin: '0 auto'}}><p>Ничего не найденно</p></div>
+        }) :  <div style={{fontSize: 16, textAlign: 'center', height: 400, display: 'flex', alignItems: 'center', margin: '0 auto'}}> {loading ? <Loader /> : <p>Ничего не найденно</p>}</div>
       }
     </div>
   )

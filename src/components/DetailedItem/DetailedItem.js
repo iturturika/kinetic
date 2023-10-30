@@ -6,15 +6,17 @@ import { Link } from 'react-router-dom'
 import Loader from '../Loader/Loader'
 const DetailedItem = ({setOnClickItem, onClickItem}) => {
   const bodyElement = document.body;
-  const [item, setItem] = React.useState(false);
+  const [item, setItem] = React.useState([]);
   const [selectedImage, setSelectedImage] = React.useState();
   const [isLoaded, setIsLoaded] = React.useState(false);
+  const [imagePaths, setImagePaths] = React.useState([]);
   React.useEffect(() => {
     const getItems = async () => {
       try {
         const res = await axios.get(process.env.REACT_APP_BE_URL + `/items/${onClickItem}`);
         setItem(res.data);
         setSelectedImage(res.data.imagePaths[0]);
+        setImagePaths(res.data.imagePaths);
       } catch (err) {
         return err;
       }
@@ -31,8 +33,8 @@ const DetailedItem = ({setOnClickItem, onClickItem}) => {
         <img src={process.env.REACT_APP_BE_URL + '/' + selectedImage} alt='item' className='detailed-image' draggable="false"></img>
         <div className='detailed-item-galery-photo'> 
           {
-            item.imagePaths.map((image, index) => {
-              return <><img key={index} src={process.env.REACT_APP_BE_URL + '/' + image} alt='item' onClick={() => {setSelectedImage(image)}} className='detailed-image-miniature' draggable="false" onLoad={setIsLoaded(true)} style={isLoaded ? {display: 'block'} : {display: 'none'}}></img><Loader key={index} isLoaded={isLoaded}/></>
+            imagePaths.map((image, index) => {
+              return <img key={index} src={process.env.REACT_APP_BE_URL + '/' + image} alt='item' onClick={() => {setSelectedImage(image)}} className='detailed-image-miniature' draggable="false" onLoad={setIsLoaded(true)} ></img>
             })
           }
         </div>

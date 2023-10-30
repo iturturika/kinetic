@@ -3,10 +3,12 @@ import './DetailedItem.scss'
 import closeIcon from '../../assets/img/closeIcon.svg'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import Loader from '../Loader/Loader'
 const DetailedItem = ({setOnClickItem, onClickItem}) => {
   const bodyElement = document.body;
   const [item, setItem] = React.useState(false);
   const [selectedImage, setSelectedImage] = React.useState();
+  const [isLoaded, setIsLoaded] = React.useState(false);
   React.useEffect(() => {
     const getItems = async () => {
       try {
@@ -30,7 +32,7 @@ const DetailedItem = ({setOnClickItem, onClickItem}) => {
         <div className='detailed-item-galery-photo'> 
           {
             item.imagePaths.map((image, index) => {
-              return <img key={index} src={process.env.REACT_APP_BE_URL + '/' + image} alt='item' onClick={() => {setSelectedImage(image)}}className='detailed-image-miniature' draggable="false"></img>
+              return isLoaded ? <img key={index} src={process.env.REACT_APP_BE_URL + '/' + image} alt='item' onClick={() => {setSelectedImage(image)}} className='detailed-image-miniature' draggable="false" onLoad={setIsLoaded(true)}></img> : <Loader key={index}/>
             })
           }
         </div>

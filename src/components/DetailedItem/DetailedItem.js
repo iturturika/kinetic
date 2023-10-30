@@ -32,7 +32,7 @@ const DetailedItem = ({setOnClickItem, onClickItem}) => {
         <div className='detailed-item-galery-photo'> 
           {
             item.imagePaths.map((image, index) => {
-              return <><img key={index} src={process.env.REACT_APP_BE_URL + '/' + image} alt='item' onClick={() => {setSelectedImage(image)}} className='detailed-image-miniature' draggable="false" onLoad={setIsLoaded(true)} style={isLoaded ? {display: 'block'} : {display: 'none'}}></img><Loader key={index} style={isLoaded ? {display: 'block'} : {display: 'none'}}/></>
+              return <><img key={index} src={process.env.REACT_APP_BE_URL + '/' + image} alt='item' onClick={() => {setSelectedImage(image)}} className='detailed-image-miniature' draggable="false" onLoad={setIsLoaded(true)} style={isLoaded ? {display: 'block'} : {display: 'none'}}></img><Loader key={index} isLoaded={isLoaded}/></>
             })
           }
         </div>

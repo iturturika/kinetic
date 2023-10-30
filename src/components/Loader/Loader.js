@@ -1,9 +1,9 @@
 import React from 'react'
 import './Loader.scss'
 
-const Loader = ({style}) => {
+const Loader = ({isLoaded}) => {
   return (
-        <div class="loader" style={style}></div>
+        <div class="loader" style={isLoaded ? {display: 'block'} : {display: 'none'}}></div>
   )
 }
 

@@ -1,9 +1,9 @@
 import React from 'react'
 import './Loader.scss'
 
-const Loader = () => {
+const Loader = ({style}) => {
   return (
-        <div class="loader"></div>
+        <div class="loader" style={style}></div>
   )
 }
 

@@ -10,6 +10,7 @@ import OfferPage from './pages/OfferPage/OfferPage';
 import AdminMainPage from './pages/AdminMainPage/AdminMainPage';
 import AddItemPage from './pages/AddItemPage/AddItemPage';
 import LoginPage from './pages/LoginPage/LoginPage';
+import GiveawayPage from './pages/GiveawayPage/GiveawayPage';
 
 function App() {
   const [onClickItem, setOnClickItem] = React.useState(false);
@@ -22,6 +23,7 @@ function App() {
       <Header setOnClickCart={setOnClickCart}/>
       <Routes>
         <Route path="/" element={<Main setOnClickItem={setOnClickItem} />}/>
+        <Route exact path="/giveaway" element={<GiveawayPage />}/>
         <Route exact path="/info" element={<OfferPage />}/>
         <Route exact path='/admin' element={<AdminMainPage />}/>
         <Route exact path='/add-item' element={<AddItemPage />}/>

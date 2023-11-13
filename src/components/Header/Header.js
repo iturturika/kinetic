@@ -5,6 +5,7 @@ import logoImg from '../../assets/img/logo.svg';
 
 
 import {Link} from 'react-router-dom';
+import MyCountDown from '../MyCountDown/MyCountDown';
 
 const Header = ({setOnClickCart}) => {
   
@@ -15,8 +16,8 @@ const Header = ({setOnClickCart}) => {
         <div className='header-wrap'>
             <Link to={'/'}><img src={logoImg} className='logo' alt={'logo'}></img></Link>
             <div className='header-socials'>
-              <Link to={'/add-item'}><button className='create-item-button'>Создать</button></Link>
-
+              {/* <Link to={'/add-item'}><button className='create-item-button'>Создать</button></Link> */}
+              <MyCountDown />
             </div>
             {/* <img src={cartImg} className='cart' alt={'cart'} onClick={() => {setOnClickCart(true); bodyElement.style.overflowY = 'hidden';}}></img> */}
         </div>

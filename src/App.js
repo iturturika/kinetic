@@ -11,6 +11,7 @@ import AdminMainPage from './pages/AdminMainPage/AdminMainPage';
 import AddItemPage from './pages/AddItemPage/AddItemPage';
 import LoginPage from './pages/LoginPage/LoginPage';
 import GiveawayPage from './pages/GiveawayPage/GiveawayPage';
+import GiveawayResult from './pages/GiveawayResult/GiveawayResult';
 
 function App() {
   const [onClickItem, setOnClickItem] = React.useState(false);
@@ -24,6 +25,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Main setOnClickItem={setOnClickItem} />}/>
         <Route exact path="/giveaway" element={<GiveawayPage />}/>
+        <Route exact path="/admin/giveaway-result" element={<GiveawayResult />}/>
         <Route exact path="/info" element={<OfferPage />}/>
         <Route exact path='/admin' element={<AdminMainPage />}/>
         <Route exact path='/add-item' element={<AddItemPage />}/>

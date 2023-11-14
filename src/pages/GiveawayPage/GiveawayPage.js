@@ -78,11 +78,13 @@ const GiveawayPage = () => {
                 <label style={{textAlign: 'center'}}>Напишите какие вещи или бренды вы бы хотели видеть у нас</label>
                 <textarea placeholder='...' value={answer} onChange={(event) => {setAnswer(event.target.value)}}></textarea>
                 {
+                    Array.isArray(errorMsg) ?
                     errorMsg.map((err) => {
                         return(
                             <p style={{color: 'red', marginBottom: 10}} key={err.msg}>{err.msg}</p>
                         )
                     })
+                    : <p style={{color: 'red', marginBottom: 10}} >Вы уже участвуете</p>
                 }
                 <button className='giveaway-next-button' onClick={() => {participate(nickname, answer)}}>Участвовать</button>
                 

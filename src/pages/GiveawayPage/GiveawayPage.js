@@ -1,7 +1,7 @@
 import React from 'react'
 import './GiveawayPage.scss'
 import { Link } from 'react-router-dom'
-import banner from '../../assets/img/banner.jfif'
+import banner from '../../assets/img/banner.jpg'
 import MyCountDown from '../../components/MyCountDown/MyCountDown'
 import axios from 'axios'
 
@@ -38,13 +38,11 @@ const GiveawayPage = () => {
             <div className='giveaway-block__content1'>
                 <h2>Условия</h2>
                 <ol>
-                    <li>Поставить лайк на <Link to={'#'}>пост с конкурсом</Link></li>
-                    <li>Написать комментарий под <Link to={'#'}>постом с конкурсом</Link> указав 2 друзей</li>
-                    <li>Подписаться на спонсоров:</li>
+                    <li>Поставить лайк на пост с конкурсом</li>
+                    <li>Сделать репост в сторис с отметкой нас</li>
+                    <li>Подписаться на:</li>
                     <ul>
-                        <li><Link to={'#'}>kinetic.store.md</Link></li>
-                        <li><Link to={'#'}>kinetic.store.md</Link></li>
-                        <li><Link to={'#'}>kinetic.store.md</Link></li>
+                        <li><Link to={'https://instagram.com/kinetic.store.md'}>kinetic.store.md</Link></li>
                     </ul>
                     <li>Указать свой инстаграм на нашем сайте</li>
                 </ol>

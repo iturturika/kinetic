@@ -1,7 +1,7 @@
 import React from 'react'
 import './GiveawayPage.scss'
 import { Link } from 'react-router-dom'
-import banner from '../../assets/img/banner.jpg'
+import banner from '../../assets/img/banner.png'
 import MyCountDown from '../../components/MyCountDown/MyCountDown'
 import axios from 'axios'
 

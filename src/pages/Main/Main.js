@@ -63,7 +63,7 @@ const Main = ({setOnClickItem}) => {
           </div>
         </div>
       </div>
-      <div style={{display: 'flex', flexDirection: 'column', width: '100%', flexWrap: 'wrap'}}>
+      <div className='item-block'>
       {
         items.length > 0 ? 
         items.map((item) => {

@@ -63,12 +63,14 @@ const Main = ({setOnClickItem}) => {
           </div>
         </div>
       </div>
+      <div style={{display: 'flex', flexDirection: 'column', width: '100%', flexWrap: 'wrap'}}>
       {
         items.length > 0 ? 
         items.map((item) => {
           return <Item key={item._id} id={item._id} setOnClickItem={setOnClickItem} title={item.title} price={item.price} label={item.label} image={process.env.REACT_APP_BE_URL + '/' + item.imagePaths[0]}/>
         }) :  <div style={{fontSize: 16, textAlign: 'center', height: 400, display: 'flex', alignItems: 'center', margin: '0 auto'}}> {loading ? <Loader /> : <p>Ничего не найденно</p>}</div>
       }
+      </div>
     </div>
   )
 }

@@ -49,7 +49,7 @@ const DetailedItem = ({setOnClickItem, onClickItem}) => {
           <select id="size" name="size">
               <option value="Size">{item.size}</option>
           </select>
-          <Link to={item.instagramUrl} className='buy-button'>Заказать</Link>
+          <Link to={item.instagramUrl} target='_blank' className='buy-button'>Заказать</Link>
           <h4 style={{fontWeight: 700}}>Description:</h4>
           <p className='detailed-item-description'>
             {item.description}

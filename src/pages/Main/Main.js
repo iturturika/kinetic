@@ -13,6 +13,7 @@ const Main = ({setOnClickItem}) => {
   const [title, setTitle] = React.useState('');
   const [titleInput, setTitleInput] = React.useState('');
   const [loading, setLoading] = React.useState(true);
+  const [showFilters, setShowFilters] = React.useState(false);
 
   React.useEffect(() => {
     const getItems = async () => {
@@ -30,25 +31,36 @@ const Main = ({setOnClickItem}) => {
   return (
     <div className='main-wrap' style={items.length === 0 ? {justifyContent: 'center', alignItems: 'center'} : null}>
       <div className='category-wrap'>
-        <Search setTitle={setTitle} titleInput={titleInput} setTitleInput={setTitleInput}/>
-        <CategoryButton nameCategory={'Батники'} value={'HOODIE'} setCategories={setCategories} style={categories === 'HOODIE' ? {boxShadow: '0px 2px 2px 0px rgba(0, 0, 0, 0.15) inset'} : null}/>
-        <CategoryButton nameCategory={'Свитера'} value={'SWEATER'} setCategories={setCategories} style={categories === 'SWEATER' ? {boxShadow: '0px 2px 2px 0px rgba(0, 0, 0, 0.15) inset'} : null}/>
-        <CategoryButton nameCategory={'Зипки'} value={'ZIPUP'} setCategories={setCategories} style={categories === 'ZIPUP' ? {boxShadow: '0px 2px 2px 0px rgba(0, 0, 0, 0.15) inset'} : null}/>
-        <CategoryButton nameCategory={'Штаны'} value={'PANTS'} setCategories={setCategories} style={categories === 'PANTS' ? {boxShadow: '0px 2px 2px 0px rgba(0, 0, 0, 0.15) inset'} : null}/>
-        <CategoryButton nameCategory={'Джинсы'} value={'JEANS'} setCategories={setCategories} style={categories === 'JEANS' ? {boxShadow: '0px 2px 2px 0px rgba(0, 0, 0, 0.15) inset'} : null}/>
-        <CategoryButton nameCategory={'Лонгсливы'} value={'LONGSLIVE'} setCategories={setCategories} style={categories === 'LONGSLIVE' ? {boxShadow: '0px 2px 2px 0px rgba(0, 0, 0, 0.15) inset'} : null}/>
-        <CategoryButton nameCategory={'Футболки'} value={'TSHIRT'} setCategories={setCategories} style={categories === 'TSHIRT' ? {boxShadow: '0px 2px 2px 0px rgba(0, 0, 0, 0.15) inset'} : null}/>
-        <CategoryButton nameCategory={'Шорты'} value={'SHORTS'} setCategories={setCategories} style={categories === 'SHORTS' ? {boxShadow: '0px 2px 2px 0px rgba(0, 0, 0, 0.15) inset'} : null}/>
-        <CategoryButton nameCategory={'Кроссовки'} value={'SNEAKERS'} setCategories={setCategories} style={categories === 'SNEAKERS' ? {boxShadow: '0px 2px 2px 0px rgba(0, 0, 0, 0.15) inset'} : null}/>
-        <CategoryButton nameCategory={'Куртки'} value={'JACKET'} setCategories={setCategories} style={categories === 'JACKET' ? {boxShadow: '0px 2px 2px 0px rgba(0, 0, 0, 0.15) inset'} : null}/>
-        <CategoryButton nameCategory={'Ветровки'} value={'WINDBREAKER'} setCategories={setCategories} style={categories === 'WINDBREAKER' ? {boxShadow: '0px 2px 2px 0px rgba(0, 0, 0, 0.15) inset'} : null}/>
-        <CategoryButton nameCategory={'Акссесуары'} value={'ACCESSORIES'} setCategories={setCategories}style={categories === 'ACCESSORIES' ? {boxShadow: '0px 2px 2px 0px rgba(0, 0, 0, 0.15) inset'} : null} />
-        <CategoryButton nameCategory={'Ботинки'} value={'BOOTS'} setCategories={setCategories} style={categories === 'BOOTS' ? {boxShadow: '0px 2px 2px 0px rgba(0, 0, 0, 0.15) inset'} : null}/>
-        <CategoryButton nameCategory={'Рюкзаки'} value={'BAG'} setCategories={setCategories} style={categories === 'BAG' ? {boxShadow: '0px 2px 2px 0px rgba(0, 0, 0, 0.15) inset'} : null}/>
-        <CategoryButton nameCategory={'Мессенджеры'} value={'MESSENGERS'} setCategories={setCategories} style={categories === 'MESSENGERS' ? {boxShadow: '0px 2px 2px 0px rgba(0, 0, 0, 0.15) inset'} : null}/>
+          <Search setTitle={setTitle} titleInput={titleInput} setTitleInput={setTitleInput}/> 
+        {
+                showFilters ?
+                <>
+                  <CategoryButton nameCategory={'Батники'} value={'HOODIE'} setCategories={setCategories} style={categories === 'HOODIE' ? {boxShadow: '0px 2px 2px 0px rgba(0, 0, 0, 0.15) inset'} : null}/>
+                  <CategoryButton nameCategory={'Свитера'} value={'SWEATER'} setCategories={setCategories} style={categories === 'SWEATER' ? {boxShadow: '0px 2px 2px 0px rgba(0, 0, 0, 0.15) inset'} : null}/>
+                  <CategoryButton nameCategory={'Зипки'} value={'ZIPUP'} setCategories={setCategories} style={categories === 'ZIPUP' ? {boxShadow: '0px 2px 2px 0px rgba(0, 0, 0, 0.15) inset'} : null}/>
+                  <CategoryButton nameCategory={'Штаны'} value={'PANTS'} setCategories={setCategories} style={categories === 'PANTS' ? {boxShadow: '0px 2px 2px 0px rgba(0, 0, 0, 0.15) inset'} : null}/>
+                  <CategoryButton nameCategory={'Джинсы'} value={'JEANS'} setCategories={setCategories} style={categories === 'JEANS' ? {boxShadow: '0px 2px 2px 0px rgba(0, 0, 0, 0.15) inset'} : null}/>
+                  <CategoryButton nameCategory={'Лонгсливы'} value={'LONGSLIVE'} setCategories={setCategories} style={categories === 'LONGSLIVE' ? {boxShadow: '0px 2px 2px 0px rgba(0, 0, 0, 0.15) inset'} : null}/>
+                  <CategoryButton nameCategory={'Футболки'} value={'TSHIRT'} setCategories={setCategories} style={categories === 'TSHIRT' ? {boxShadow: '0px 2px 2px 0px rgba(0, 0, 0, 0.15) inset'} : null}/>
+                  <CategoryButton nameCategory={'Шорты'} value={'SHORTS'} setCategories={setCategories} style={categories === 'SHORTS' ? {boxShadow: '0px 2px 2px 0px rgba(0, 0, 0, 0.15) inset'} : null}/>
+                  <CategoryButton nameCategory={'Кроссовки'} value={'SNEAKERS'} setCategories={setCategories} style={categories === 'SNEAKERS' ? {boxShadow: '0px 2px 2px 0px rgba(0, 0, 0, 0.15) inset'} : null}/>
+                  <CategoryButton nameCategory={'Куртки'} value={'JACKET'} setCategories={setCategories} style={categories === 'JACKET' ? {boxShadow: '0px 2px 2px 0px rgba(0, 0, 0, 0.15) inset'} : null}/>
+                  <CategoryButton nameCategory={'Ветровки'} value={'WINDBREAKER'} setCategories={setCategories} style={categories === 'WINDBREAKER' ? {boxShadow: '0px 2px 2px 0px rgba(0, 0, 0, 0.15) inset'} : null}/>
+                  <CategoryButton nameCategory={'Акссесуары'} value={'ACCESSORIES'} setCategories={setCategories}style={categories === 'ACCESSORIES' ? {boxShadow: '0px 2px 2px 0px rgba(0, 0, 0, 0.15) inset'} : null} />
+                  <CategoryButton nameCategory={'Ботинки'} value={'BOOTS'} setCategories={setCategories} style={categories === 'BOOTS' ? {boxShadow: '0px 2px 2px 0px rgba(0, 0, 0, 0.15) inset'} : null}/>
+                  <CategoryButton nameCategory={'Рюкзаки'} value={'BAG'} setCategories={setCategories} style={categories === 'BAG' ? {boxShadow: '0px 2px 2px 0px rgba(0, 0, 0, 0.15) inset'} : null}/>
+                  <CategoryButton nameCategory={'Мессенджеры'} value={'MESSENGERS'} setCategories={setCategories} style={categories === 'MESSENGERS' ? {boxShadow: '0px 2px 2px 0px rgba(0, 0, 0, 0.15) inset'} : null}/>
+                </>
+                : null
+        }
         {/* <CategoryButton nameCategory={'Оригинал'} value={'LEGIT'} setCategories={setLabel} style={label === 'LEGIT' ? {boxShadow: '0px 2px 2px 0px rgba(0, 0, 0, 0.15) inset'} : null}/> */}
-        <div className='category-button' onClick={() => {setCategories(''); setTitle(''); setTitleInput(''); setLabel('')}}>
-          <p>Сбросить</p>
+        <div style={{display: 'flex', justifyContent: 'space-between', width: '100%'}}>
+          <div className='category-button' onClick={() => {setShowFilters(!showFilters)}}>
+                    {showFilters ? <p>Скрыть</p> : <p>Фильтры...</p>}
+                  </div>
+          <div className='category-button' onClick={() => {setCategories(''); setTitle(''); setTitleInput(''); setLabel('')}}>
+            <p>Сбросить</p>
+          </div>
         </div>
       </div>
       {

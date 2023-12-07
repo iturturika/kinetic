@@ -12,12 +12,20 @@
     flex-direction: column;
 }
 
+.overlay-control{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .close-icon{
     width: 45px;
     cursor: pointer;
-    margin-left: auto;
-    margin-top: 10px;
-    margin-right: 10px;
+}
+
+.back-icon{
+    width: 45px;
+    cursor: pointer;
 }
 
 .detailed-item-galery{

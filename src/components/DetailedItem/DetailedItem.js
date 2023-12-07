@@ -1,6 +1,7 @@
 import React from 'react'
 import './DetailedItem.scss'
 import closeIcon from '../../assets/img/closeIcon.svg'
+import arrowIcon from '../../assets/img/arrow.svg'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 const DetailedItem = ({setOnClickItem, onClickItem}) => {
@@ -23,7 +24,10 @@ const DetailedItem = ({setOnClickItem, onClickItem}) => {
   return (
     item ? 
     <div className='overlay'>
-    <img src={closeIcon} alt="X" className='close-icon' onClick={() => {setOnClickItem(false); bodyElement.style.overflowY = 'auto';}}></img>
+    <div className='overlay-control'>
+      <img src={arrowIcon} alt="arrow" className='back-icon' onClick={() => {setOnClickItem(false); bodyElement.style.overflowY = 'auto';}}></img>
+      <img src={closeIcon} alt="X" className='close-icon' onClick={() => {setOnClickItem(false); bodyElement.style.overflowY = 'auto';}}></img>
+    </div>
     <div className='detailed-item-block'>
       <div className='detailed-item-galery'>
         <img src={process.env.REACT_APP_BE_URL + '/' + selectedImage} alt='item' className='detailed-image' draggable="false"></img>

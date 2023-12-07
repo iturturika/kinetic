@@ -1,12 +1,13 @@
 .main-wrap{
     margin: 0 auto;
-    margin-top: 100px;
+    margin-top: 50px;
     margin-bottom: 130px;
     max-width: 1200px;
     display: flex;
     flex-wrap: wrap;
     column-gap: 52px;
     row-gap: 100px;
+    flex-direction: column;
 }
 
 .category-wrap{
@@ -46,5 +47,6 @@
     .category-wrap{
         padding-left: 10px;
         padding-right: 10px;
+    
     }
 }

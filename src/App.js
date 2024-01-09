@@ -12,6 +12,7 @@ import AddItemPage from './pages/AddItemPage/AddItemPage';
 import LoginPage from './pages/LoginPage/LoginPage';
 import GiveawayPage from './pages/GiveawayPage/GiveawayPage';
 import GiveawayResult from './pages/GiveawayResult/GiveawayResult';
+import WelcomePage from './pages/WelcomePage/WelcomePage';
 
 function App() {
   const [onClickItem, setOnClickItem] = React.useState(false);
@@ -21,15 +22,16 @@ function App() {
     <div className="App" >
       {onClickCart ? <Cart setOnClickCart={setOnClickCart}/> : null}
       {onClickItem ? <DetailedItem onClickItem={onClickItem} setOnClickItem={setOnClickItem}/> : null}
-      <Header setOnClickCart={setOnClickCart}/>
+
       <Routes>
-        <Route path="/" element={<Main setOnClickItem={setOnClickItem} />}/>
-        <Route exact path="/giveaway" element={<GiveawayPage />}/>
-        <Route exact path="/admin/giveaway-result" element={<GiveawayResult />}/>
-        <Route exact path="/info" element={<OfferPage />}/>
-        <Route exact path='/admin' element={<AdminMainPage />}/>
-        <Route exact path='/add-item' element={<AddItemPage />}/>
-        <Route exact path='/login' element={<LoginPage />}/>
+        <Route path="/" element={<WelcomePage />}/>
+        <Route exact path="/shop" element={<><Header/><Main setOnClickItem={setOnClickItem} /></>}/>
+        <Route exact path="/giveaway" element={<><Header/><GiveawayPage /> </>}/>
+        <Route exact path="/admin/giveaway-result" element={<><Header/><GiveawayResult /> </>}/>
+        <Route exact path="/info" element={<><Header/><OfferPage /> </>}/>
+        <Route exact path='/admin' element={<><Header/><AdminMainPage /> </>}/>
+        <Route exact path='/add-item' element={<><Header/><AddItemPage /> </>}/>
+        <Route exact path='/login' element={<><Header/><LoginPage /> </>}/>
       </Routes>
       <Footer />
     </div>

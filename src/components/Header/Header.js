@@ -14,10 +14,9 @@ const Header = ({setOnClickCart}) => {
   return (
     <header className='header'>
         <div className='header-wrap'>
-            <Link to={'/'}><img src={logoImg} className='logo' alt={'logo'}></img></Link>
+            <Link to={'/shop'}><img src={logoImg} className='logo' alt={'logo'}></img></Link>
             <div className='header-socials'>
               {/* <Link to={'/add-item'}><button className='create-item-button'>Создать</button></Link> */}
-              <MyCountDown link='/giveaway'/>
             </div>
             {/* <img src={cartImg} className='cart' alt={'cart'} onClick={() => {setOnClickCart(true); bodyElement.style.overflowY = 'hidden';}}></img> */}
         </div>
